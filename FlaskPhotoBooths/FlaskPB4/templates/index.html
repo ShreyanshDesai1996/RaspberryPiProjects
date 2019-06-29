@@ -1,0 +1,37 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block title %}Camera Roll{% endblock %}
+
+
+{% block content %}
+  <div class="container">
+    <h1>Camera Roll</h1>
+    <img src="{{ url_for('video_feed') }}">
+ 
+ 	<br>
+    <br>
+    <div class="row">
+      <div class="col-xs-12">
+        <form action="{{ url_for('take_picture') }}">
+          <div class="form-group">
+            <button class="btn btn-primary">Take Picture</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-xs-12">
+        {% for hist in hists %}
+    <div>{{hist}}</div><br> 
+    <img src="static/{{hist}}" alt="No images yet {{hist}}">
+    <br><br>
+    {% endfor %} 
+      </div>
+    </div>
+    
+  </div>
+
+{% endblock %}
+

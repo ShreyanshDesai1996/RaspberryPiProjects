@@ -1,0 +1,34 @@
+#connect gpio 17 to a 10k resistor and then to 5v across a button
+#import RPi.GPIO as GPIO
+import time
+from sense_hat import SenseHat
+import random
+#GPIO.setmode(GPIO.BCM)
+#GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
+sense=SenseHat()
+num=random.randint(1,11)
+print('Try to push the button on number %d'%(num))
+
+i=0
+inc=1
+
+while True:
+    i+=inc
+    #print(i)
+    sense.show_letter(str(i))
+    time.sleep(0.2)
+    events=sense.stick.get_events()
+    #print events
+    if(len(events)!=0 and i==num):
+	print('You win!')
+	break
+    elif(len(events)!=0 and i!=num):
+	print('You lose! Pressed at %d'%(i))   
+	break
+    if(i==9):
+        inc=-1
+    if(i==1):
+        inc=1
+
+

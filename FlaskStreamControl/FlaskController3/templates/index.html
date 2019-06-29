@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+ 
+ 
+	<head>
+ 
+   
+	<title>Video Streaming </title>
+ 	
+	 <script type="text/javascript">
+      		 function move(clicked_id) {
+        var req = new XMLHttpRequest();
+        var result = document.getElementById('result');
+        req.onreadystatechange = function()
+        {
+          if(this.readyState == 4 && this.status == 200) {
+            result.innerHTML = this.responseText;
+          } else {
+            result.innerHTML = "Unknown direction response from flask";
+          }
+        }
+        req.open('POST', '/', true);
+        req.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+        req.send("dir=" + clicked_id);
+      }	
+    </script>
+ 
+	</head>
+ 
+ 
+	<body>
+ 
+   
+		<h1> Live Video Streaming </h1>
+ 
+   
+		<img src="{{ url_for('video_feed') }}">
+ 
+ 		<br>
+		<br>
+
+		<form action="index" method="post">
+
+
+                <button type="button" id="1"  value="Forward" name="Button1" onclick="move(this.id);" >Forward</button>
+		<button type="button" id="2"  value="Backward" name="Button2" onclick="move(this.id);" >Backward</button>		
+		
+		<button type="button" id="3"  value="Left" name="Button3" onclick="move(this.id);" >Left</button>
+		<button type="button" id="4"  value="Right" name="Button4" onclick="move(this.id);" >Right</button>
+
+
+
+                
+
+		<div id="result"></div>
+            
+
+        </form>
+	
+	</body>
+ 
+
+</html> 

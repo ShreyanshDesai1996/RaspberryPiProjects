@@ -1,0 +1,19 @@
+<html> 
+ 
+	<head> 
+   
+	<title>Photo booth</title> 
+ 
+	</head> 
+ 
+	<body> 
+   
+		<h1> Here is the captured image </h1> 
+   
+		<img src="t.jpg" alt="Captured image">
+
+            </div>
+        </form>
+	</body> 
+
+</html> 

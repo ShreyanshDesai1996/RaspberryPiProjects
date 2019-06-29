@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topbar {
+	width:100%;
+    padding-bottom:1px;
+}
+
+.horiz {
+	margin: 0;
+    padding: 0;
+	display: table;
+    width: 100%	;
+}
+
+.horiz li {
+		
+  display: table-cell;
+}
+
+.horiz a{
+	border-radius: 6px;
+	display: block;
+    text-align: center;
+    margin: 0 5px;
+    background: #999;
+    padding-top:1px;
+    padding-bottom:1px;
+}
+
+
+.leftbar {
+	border-radius: 6px;
+	float:left;
+    width: 20%;
+    margin-bottom: 0;
+    background: #999;
+}
+
+.content {
+	display: block;
+    border-radius: 6px;
+    background: #999;
+    float:right;
+    width: 78%;
+}
+
+
+
+.footer {
+	
+    display: block;
+    border-radius: 6px;
+    background: #999;
+	clear:both;  <!-- ensures the footer is below both left navbar and content -->
+    padding-top:5px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="topbar">
+<ul class="horiz">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+</div>
+
+<br>
+
+
+
+<ul class="leftbar">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+<div class="content">
+<p>A background color is added to the links to show the link area.</p>
+<p>Notice that the whole link area is clickable, not just the text.</p>
+</div>
+
+<br>
+<div class="footer">
+<p>A background color is added to the links to show the link area.</p>
+<p>Notice that the whole link area is clickable, not just the text.</p>
+</div>
+</body>
+</html>

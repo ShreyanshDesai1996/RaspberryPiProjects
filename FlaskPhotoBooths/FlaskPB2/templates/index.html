@@ -1,0 +1,27 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block title %} Raspberry Photo Booth {% endblock %}
+
+
+{% block content %}
+  <div class="container">
+    <h1>Image from Raspberry Pi</h1>
+    <div class="row">
+      <div class="col-xs-12">
+        <img src="{{ url_for('static', filename='image.png') }}"> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <form action="{{ url_for('take_picture') }}">
+          <div class="form-group">
+            <button class="btn btn-primary">Take Picture</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
